@@ -1,2 +1,2 @@
-# Introduction-to-Computer-Science-
-中央資工 計算機概論 I 2022 Fall
+# 計算機概論 I
+**資工系必修 CE1001 2022 Fall 大一**  
