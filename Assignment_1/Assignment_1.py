@@ -2,7 +2,7 @@
 Assignment 1
 Name: 林晉宇
 Student Number: 110403518
-Course 2022-CE1003-A
+Course 2022-CE1001-A
 '''
 chinese_float = float(input("Please enter your Chinese score: "))
 english_float = float(input("Please enter your English score: "))
