@@ -1,0 +1,6 @@
+Hello John, welcome to NCU CSIE!
+Sorry, Mary can't enter NCU CSIE.
+Hello Kevin, welcome to NCU CSIE!
+Sorry, Jesse can't enter NCU CSIE.
+12
+8
