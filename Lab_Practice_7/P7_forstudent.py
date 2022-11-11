@@ -6,7 +6,7 @@ Course 2022-CE1003-A
 '''
 
 def get_maze():
-    f = open('input.txt', 'r')
+    f = open('Lab_Practice_7\input.txt', 'r')
     maze = []
     for lines in f.readlines():
         maze.append(lines.split())
