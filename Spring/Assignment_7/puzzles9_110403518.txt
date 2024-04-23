@@ -1,0 +1,9 @@
+We use 5 pieces of puzzles.
+T4 T4 T4 U5 0 U5 0 0 
+0 T4 0 U5 U5 U5 0 0 
+V5 V5 V5 Y5 Y5 Y5 Y5 0 
+V5 Z4 Z4 0 Y5 0 0 0 
+V5 0 Z4 Z4 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
