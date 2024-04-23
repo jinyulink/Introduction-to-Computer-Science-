@@ -1,0 +1,9 @@
+We use 2 pieces of puzzles.
+F5 F5 0 F5 F5 F5 F5 F5 
+0 F5 F5 F5 0 0 F5 F5 
+0 F5 0 0 0 0 F5 F5 
+H7 0 H7 H7 H7 H7 H7 H7 
+H7 H7 H7 H7 H7 H7 H7 H7 
+H7 0 H7 H7 H7 H7 H7 H7 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 

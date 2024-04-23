@@ -4,7 +4,7 @@ Name: 林晉宇
 Student Number: 110403518
 Course 2024-CE1002-3B
 */
-// package assignment;
+package assignment;
 
 import java.util.*;
 
@@ -33,12 +33,22 @@ public class A06_110403518 {
         }
 
         public void addFlower(Flower flower) {
-            this.flowers.add(flower);
+            boolean found = false;
+            for (Flower f : this.flowers) {
+                if (f.name.equals(flower.name)) {
+                    f.quantity += flower.quantity;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                this.flowers.add(flower);
+            }
         }
 
         public Flower deleteFlower(int index) {
             try {
-                if(index >= 0 && index < this.flowers.size()) {
+                if(index >= 0 && index < this.flowers.size()) { // check if the index is in the range
                     Flower flower = this.flowers.get(index);
                     this.flowers.remove(index);
                     System.out.println("Delete successful.");
@@ -47,7 +57,7 @@ public class A06_110403518 {
                 else {
                     throw new IndexOutOfBoundsException();
                 }
-            } catch (IndexOutOfBoundsException e) {
+            } catch (IndexOutOfBoundsException e) { // catch the exception
                 System.out.println("Out of range.");
                 return null;
             }
@@ -58,7 +68,7 @@ public class A06_110403518 {
         }
 
         public void printCart() {
-            if(this.flowers.size() == 0) {
+            if(this.flowers.size() == 0) { // check if the cart is empty
                 System.out.println("Cart is empty.");
             }
             else {
@@ -77,9 +87,9 @@ public class A06_110403518 {
         public Shop() {
             this.cart = new Cart();
             this.availableFlowers = new ArrayList<Flower>();
-            String[] flowerNames = {"Rose", "Tulip", "Sunflower", "Lily", "Daisy", "Orchid", "Peony", "Carnation"};
+            String[] flowerNames = {"Rose", "Tulip", "Sunflower", "Lily", "Daisy", "Orchid", "Peony", "Carnation"}; // the available flowers
             for (String name : flowerNames) {
-                this.availableFlowers.add(new Flower(name, 100));
+                this.availableFlowers.add(new Flower(name, 100)); // add the flowers to the inventory
             }
         }
 
@@ -88,7 +98,7 @@ public class A06_110403518 {
         }
 
         public void printFlower(String name) {
-            for (Flower flower : this.availableFlowers) {
+            for (Flower flower : this.availableFlowers) { // print the available flowers
                 if (flower.name.equals(name)) {
                     System.out.println(flower.name + ": " + flower.quantity + " available");
                     return;
@@ -100,7 +110,7 @@ public class A06_110403518 {
             for (Flower flower : this.availableFlowers) {
                 if (flower.name.equals(name)) {
                     // System.out.println(flower.name + ": " + flower.quantity + " available");
-                    if (flower.quantity >= quantity) {
+                    if (flower.quantity >= quantity) { // check if the quantity is enough
                         flower.quantity -= quantity;
                         System.out.println("Collect successful.");
                         this.cart.addFlower(new Flower(name, quantity));
@@ -112,10 +122,10 @@ public class A06_110403518 {
             }
         }
 
-        public void deleteFlower(int index) {
+        public void deleteFlower(int index) { // delete the flower from the cart
             Flower flower = this.cart.deleteFlower(index);
             if(flower == null)  return;
-            for (Flower availableFlower : this.availableFlowers) {
+            for (Flower availableFlower : this.availableFlowers) { // add the flower back to the inventory
                 if (availableFlower.name.equals(flower.name)) {
                     availableFlower.quantity += flower.quantity;
                     return;
@@ -123,7 +133,7 @@ public class A06_110403518 {
             }
         }
 
-        public void checkout() {
+        public void checkout() { // checkout the cart
             System.out.println("===Receipt===");
             this.cart.printCart();
             System.out.println("===Inventory===");
@@ -144,12 +154,12 @@ public class A06_110403518 {
             else if(command.equals("Collect")){
                 String name = sc.next();
                 shop.printFlower(name);
-                try {
+                try { // catch the exception
                     int quantity = sc.nextInt();
                     if (quantity < 0) {
-                        throw new InputNegativeException("Please enter a legal number.");
+                        throw new InputNegativeException("Please enter a legal number."); // throw the negative input exception
                     }
-                    shop.collectFlower(name, quantity);
+                    shop.collectFlower(name, quantity);// collect the flower
                 } catch (InputMismatchException e) {
                     System.out.println("Please enter a legal number.");
                 } catch (InputNegativeException e) {
